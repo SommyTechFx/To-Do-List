@@ -27,9 +27,13 @@
 }
 
 .gradient {
+    top: 0;
+    left: 0;
 	width: 100%;
-	height: 100vh;
-	background: linear-gradient(334deg, #6b97f7, #7525e2, #f7137e);
+	height: 100%;
+    display: flex;
+    position: absolute;
+    background: linear-gradient(334deg, #6b97f7, #7525e2, #f7137e);
 	background-size: 180% 180%;
 	animation: gradient-animation 6s ease infinite;
     background-position: center;
@@ -52,22 +56,106 @@
 .Section{
    height: 100vh;
    width:100%;
-   border:  5px solid black;
-   position: center;
+   position:absolute;
+   justify-content: center;
+
+
+   
 
  
+}
+
+h3{
+    max-width: 1000px;
+    padding: 20px;
+    margin: 50px auto;
+    font-size: clamp(1rem, 7vw, 3rem);
+    text-align: center;
+    line-height: 1;
+    flex-grow: 1;
+
+    
+}
+
+.love-emoji{
+    width: 35px;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    text-align: center;
+
+}
+
+.Daily-Reminder{
+    position: relative;
+    height: 1em;
+    overflow: hidden;
+    font-size: calc(1em + 8px);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+   
+
+
+    
+}
+@keyframes auto-scroll{
+    0%{
+        transform: translateY(0);
+    }
+    5%{
+        transform: translateY(0);
+    }
+    10%{
+        transform: translateY(-1em); 
+    }
+    30%{
+        transform: translateY(-1em);
+    }
+    35%{
+        transform: translateY(-2em);
+    }
+    55%{
+        transform: translateY(-2em);
+    }
+    60%{
+        transform: translateY(-3em);
+    }
+    80%{
+        transform: translateY(-3em);
+    }
+    85%{
+        transform: translateY(-4em);
+    }
+    100%{
+        transform: translateY(-4em); 
+    }
+}
+
+.Daily-Reminder span{
+    color: white;
+    -webkit-background-clip: text;
+    -webkit-animation-fill-color: transparent;
+    animation: auto-scroll 15s infinite;
+    flex-grow: 1;
 }
 
 
 
 .To-Do-list{
-width: 100% ;
-max-width: 600px;
-border-radius: 10px;
-background: #e0e0e0;
-box-shadow: inset -18px -18px 36px #bebebe,inset 18px 18px 36px #ffffff;
-margin: 100px auto 20px;
-padding: 40px 30px 70px;
+    width: 100% ;
+    max-width: 600px;
+    border-radius: 10px;
+    background: #e0e0e0;
+    box-shadow: inset -18px -18px 36px #bebebe,inset 18px 18px 36px #ffffff;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+    display:block;
+    margin-top: 0;
+    flex-grow: 1;
 
 
 }
@@ -77,6 +165,7 @@ padding: 40px 30px 70px;
    display: flex;
    align-items: center;
    margin-bottom: 20px;
+   flex-grow: 1;
 }
 
 span{
@@ -100,6 +189,7 @@ margin-left: 10px;
     border-radius: 30px;
     padding-left: 20px;
     margin-bottom: 25px;
+    flex-grow: 1;
 }
 
 input{
@@ -108,6 +198,9 @@ input{
     outline: none;
     background: transparent;
     padding: 10px;
+    font-size: 17px;
+    display: flex;
+    flex-grow: 1;
 }
 
 button{
@@ -121,6 +214,8 @@ button{
     cursor: pointer;
     border-radius: 40px;
     transition: all 0.1s;
+    display: flex;
+    
 }
 
 button:hover{
@@ -176,6 +271,13 @@ ul li span{
 
 ul li span:hover{
     background-color: #bebebe;
+}
+
+@media  (width: 600px){
+.row-1{
+    flex-direction: column;
+    width: 100%;
+}
 }
 
 
